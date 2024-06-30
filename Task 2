@@ -1,0 +1,46 @@
+arrayManipulation.js
+
+/**
+ * Function to process an array by squaring even numbers and tripling odd numbers.
+ * @param {number[]} arr - The array of numbers to process.
+ * @return {number[]} - The new array with processed numbers.
+ */
+function processArray(arr) {
+  return arr.map(num => {
+    if (num % 2 === 0) {
+      // Square even numbers
+      return num * num;
+    } else {
+      // Triple odd numbers
+      return num * 3;
+    }
+  });
+}
+
+/**
+ * Function to format an array of strings based on an array of numbers.
+ * @param {string[]} strArray - The array of strings to format.
+ * @param {number[]} numArray - The array of numbers to determine formatting.
+ * @return {string[]} - The new array with formatted strings.
+ */
+function formatArrayStrings(strArray, numArray) {
+  return strArray.map((str, index) => {
+    const num = numArray[index];
+    if (num % 2 === 0) {
+      // Capitalize the entire string if the number is even
+      return str.toUpperCase();
+    } else {
+      // Convert the string to lowercase if the number is odd
+      return str.toLowerCase();
+    }
+  });
+}
+
+// Example usage:
+const inputArray = [1, 2, 3, 4, 5];
+const processedArray = processArray(inputArray);
+console.log(processedArray); // Output: [3, 4, 9, 16, 15]
+
+const stringArray = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry'];
+const formattedStrings = formatArrayStrings(stringArray, processedArray);
+console.log(formattedStrings); // Output: ['apple', 'BANANA', 'cherry', 'DATE', 'elderberry']
