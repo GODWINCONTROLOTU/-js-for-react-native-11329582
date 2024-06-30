@@ -1,0 +1,23 @@
+// arrayManipulation.js
+
+/**
+ * Function to process an array by squaring even numbers and tripling odd numbers.
+ * @param {number[]} arr - The array of numbers to process.
+ * @return {number[]} - The new array with processed numbers.
+ */
+function processArray(arr) {
+  return arr.map(num => {
+    if (num % 2 === 0) {
+      // Square even numbers
+      return num * num;
+    } else {
+      // Triple odd numbers
+      return num * 3;
+    }
+  });
+}
+
+// Example usage:
+const inputArray = [1, 2, 3, 4, 5];
+const processedArray = processArray(inputArray);
+console.log(processedArray); // Output: [3, 4, 9, 16, 15]
