@@ -1,0 +1,35 @@
+// userInfo.js
+
+/**
+ * Function to create user profiles.
+ * @param {string[]} originalNames - The array of original names.
+ * @param {string[]} modifiedNames - The array of modified names.
+ * @return {Object[]} - The array of user profile objects.
+ */
+function createUserProfiles(originalNames, modifiedNames) {
+  const userProfiles = [];
+  
+  for (let i = 0; i < originalNames.length; i++) {
+    userProfiles.push({
+      id: i + 1,
+      originalName: originalNames[i],
+      modifiedName: modifiedNames[i]
+    });
+  }
+  
+  return userProfiles;
+}
+
+// Example usage:
+const originalNames = ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'];
+const modifiedNames = ['ALICE', 'bob', 'CHARLIE', 'diana', 'EVE'];
+const userProfiles = createUserProfiles(originalNames, modifiedNames);
+console.log(userProfiles);
+// Output:
+// [
+//   { id: 1, originalName: 'Alice', modifiedName: 'ALICE' },
+//   { id: 2, originalName: 'Bob', modifiedName: 'bob' },
+//   { id: 3, originalName: 'Charlie', modifiedName: 'CHARLIE' },
+//   { id: 4, originalName: 'Diana', modifiedName: 'diana' },
+//   { id: 5, originalName: 'Eve', modifiedName: 'EVE' }
+// ]
